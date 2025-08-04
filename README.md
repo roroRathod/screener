@@ -2,8 +2,6 @@
 
 Workforce360 is a modern, interactive analytics platform for workforce intelligence and HR analytics. It allows users to explore, filter, and analyze employee data with a beautiful, responsive interface—all running entirely in the browser with no backend required.
 
-![Workforce360 Screenshot](assets/logo.png)
-
 ## Features
 
 - 📊 **Interactive Data Analytics:** Query, filter, and visualize employee data directly in the browser.
