@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakfast Report - Workforce360</title>
+    <link rel="stylesheet" href="css/newQuery.css">
+    <!-- Logo removed -->
+</head>
+<body>
+  <div id="main-content">
+    <div id="navbar"></div>
+    <main style="margin-top: 16px;">
+        <div class="coming-soon-notification" style="background:#ffeeba; color:#856404; padding:1em; border-radius:8px; margin-bottom:1em; font-weight:600;">Some features are coming soon!</div>
+        <div id="notification" class="notification" style="display:none;"></div>
+        <div id="dataframe-container">
+            <!-- DataFrame (CSV table) will be rendered here -->
+            <div class="dataframe-actions"></div>
+        </div>
+        <div id="newsletter-container" class="newsletter-container">
+            <!-- Dynamic content will be generated here -->
+        </div>
+    </main>
+  </div>
+  <script src="js/navbar.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  <script src="js/breakfastReport.js"></script>
+</body>
+</html> 

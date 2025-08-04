@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Workforce360 - Saved Query</title>
+    <link rel="stylesheet" href="css/savedQuery.css">
+    <!-- Logo removed -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="container">
+        <main class="main-content">
+            <section class="main-header-row">
+                <h1 class="header-title">Your Saved Queries</h1>
+                <button class="create-btn floating-btn" id="create-new-query-btn">CREATE NEW SCREEN</button>
+                <div class="coming-soon-notification" style="background:#ffeeba; color:#856404; padding:1em; border-radius:8px; margin-top:1em; font-weight:600;">Some features are coming soon!</div>
+            </section>
+            <section class="card-section">
+                <div class="card">
+                    <div class="card-title">Saved Queries</div>
+                    <div class="card-grid" id="saved-queries-list">
+                        <!-- Saved queries will be injected here by JS -->
+                        <button id="ai-summary-btn" class="ai-summary-btn">AI Summary</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/navbar.js"></script>
+    <script src="js/savedQuery.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Screen - Workforce360</title>
+    <link rel="stylesheet" href="css/newQuery.css">
+    <!-- Logo removed -->
+</head>
+<body>
+  <div id="notification" class="notification" style="display:none;"></div>
+  <div id="navbar"></div>
+  <div id="main-content">
+    <main style="margin-top: 16px;">
+        <h1 style="font-size:2em; font-weight:700; color:#1976d2; margin-bottom:0.5em;">ATTRITION DATA</h1>
+        <div class="coming-soon-notification" style="background:#ffeeba; color:#856404; padding:1em; border-radius:8px; margin-bottom:1em; font-weight:600;">Some features are coming soon!</div>
+        <div id="query-builder-content">
+            <!-- Query builder and data table will be injected here by JS -->
+        </div>
+        <div id="dataframe-container">
+            <!-- DataFrame (CSV table) will be rendered here -->
+            <div class="dataframe-actions">
+                <!-- The AI SUMMARY button is moved here -->
+            </div>
+        </div>
+        <div class="query-section-wrapper">
+            <section class="query-section">
+                <div class="combined-query-box">
+                    <div class="query-box">
+                        <div class="query-title">Query</div>
+                        <textarea id="query-textarea" class="query-input-box" placeholder="Enter a query..."></textarea>
+                    </div>
+                    <div class="custom-query-box">
+                        <div class="query-title">Custom query example</div>
+                        <div id="custom-query-textarea" class="query-display-box"></div>
+                    </div>
+                    <div class="query-buttons-row">
+                        <div class="query-buttons-left-group">
+                            <button class="run-query-btn">▶ RUN THIS QUERY</button>
+                            <button class="save-query-btn" id="save-query-btn">🖥 SAVE QUERY</button>
+                            <button class="ai-summary-btn" id="ai-summary-btn">⚛ AI SUMMARY</button>
+                            <button class="download-dataset-btn" id="download-dataset-btn">⬇ DOWNLOAD</button>
+                            <button class="edit-columns-btn" id="edit-columns-btn">🛠 EDIT COLUMNS</button>
+                            <button class="show-ratios-btn" id="show-ratios-btn">🛈 SHOW RATIOS</button>
+                            <button class="clear-query-btn" id="clear-query-btn">🗑 Clear Query</button>
+                        </div>
+                    </div>
+                    <!-- Move the query-helper-section here so it appears inside the same box -->
+                    <section id="query-helper-section" class="query-helper-section" style="display:none;">
+                        <div class="query-helper-content">
+                            <div class="query-helper-header">
+                                <span class="query-helper-title">Ratio Gallery</span>
+                            </div>
+                            <div class="query-helper-operators" id="query-helper-operators">
+                                <!-- Operator buttons will be injected here -->
+                            </div>
+                            <div class="query-helper-columns-bar" id="query-helper-columns-bar">
+                                <!-- Column names will be injected here -->
+                            </div>
+                            <div class="query-helper-values-section" id="query-helper-values-section">
+                                <!-- Possible values for selected column will be shown here -->
+                            </div>
+                            <div class="query-helper-footer">
+                                <div class="query-helper-tips">
+                                    <b>Tips:</b> Click operators, columns, or values to insert them into your query. Use <b>Shift+Enter</b> for new lines. <br>
+                                    Example: <code>Gender = 'Male' AND Age > 30</code>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </main>
+    <aside id="demographic-pane" class="demographic-pane">
+        <div class="demographic-pane-header">
+            <span class="demographic-pane-title">Demographic Variables</span>
+            <button class="demographic-pane-close" id="close-demographic-pane">&times;</button>
+        </div>
+        <div class="demographic-pane-content" id="demographic-pane-content">
+            <!-- Content will be populated by JS -->
+        </div>
+        <button class="create-btn demographic-create-btn" id="create-screen-btn">Create</button>
+    </aside>
+    <!-- Edit Columns Modal -->
+    <div id="edit-columns-modal" class="modal" style="display:none; position:fixed; z-index:2100; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.25); justify-content:center; align-items:center;">
+      <div class="modal-content" style="background:#fff; border-radius:12px; padding:2em; min-width:320px; max-width:90vw; box-shadow:0 2px 16px rgba(0,0,0,0.12); display:flex; flex-direction:column; gap:1.2em;">
+        <h2 style="margin:0 0 0.5em 0; font-size:1.2em; color:#1976d2;">Manage columns</h2>
+        <div style="margin-bottom:0.5em; color:#555; font-size:0.98em;">Unselect to hide columns.</div>
+        <div id="columns-chips-container" class="columns-chips-container" style="display:flex; flex-wrap:wrap; gap:0.5em; margin-bottom:1.5em;"></div>
+        <div style="display:flex; gap:1em; justify-content:flex-end;">
+          <button id="save-columns-btn" class="run-query-btn">🖥 SAVE COLUMNS</button>
+          <button id="reset-columns-btn" class="clear-query-btn">⟳ RESET TO DEFAULT</button>
+          <button id="cancel-columns-btn" class="clear-query-btn">✖ Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <aside id="ai-summary-pane" class="ai-summary-pane" style="display:none;">
+    <div class="ai-summary-pane-header" style="display: flex; justify-content: space-between; align-items: center;">
+      <span class="ai-summary-pane-title">AI Summary</span>
+      <button class="subscribe-btn" id="subscribe-btn" style="margin-right: 1em; background: #5b5be6; color: #fff; border: none; border-radius: 8px; padding: 0.4em 1em; font-weight: 600; cursor: pointer;">Subscribe</button>
+      <button class="ai-summary-pane-close" id="close-ai-summary-pane">&times;</button>
+    </div>
+    <div class="ai-summary-pane-content" id="ai-summary-pane-content">
+      <!-- AI summary will appear here -->
+    </div>
+  </aside>
+  <!-- Subscription Modal for AI Summary -->
+  <div id="ai-summary-subscribe-modal" class="modal" style="display:none; position:fixed; z-index:2200; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.25); justify-content:center; align-items:center;">
+    <div class="modal-content" style="background:#fff; border-radius:12px; padding:2em; min-width:320px; max-width:90vw; box-shadow:0 2px 16px rgba(0,0,0,0.12); display:flex; flex-direction:column; gap:1.2em;">
+      <h2 style="margin:0 0 0.5em 0; font-size:1.2em; color:#1976d2;">Subscribe to AI Summary</h2>
+      <form id="ai-summary-subscribe-form" autocomplete="off">
+        <label for="ai-summary-subscribe-name">Name:</label>
+        <input type="text" id="ai-summary-subscribe-name" name="name" required style="margin-bottom:0.8em; width:100%; padding:0.5em; border-radius:6px; border:1px solid #ccc;">
+        <label for="ai-summary-subscribe-email">Email:</label>
+        <input type="email" id="ai-summary-subscribe-email" name="email" required style="margin-bottom:0.8em; width:100%; padding:0.5em; border-radius:6px; border:1px solid #ccc;">
+        <div id="ai-summary-subscribe-error" style="color:#d32f2f; margin-bottom:0.8em; display:none;"></div>
+        <div style="display:flex; gap:1em; justify-content:flex-end;">
+          <button type="button" id="ai-summary-subscribe-cancel" class="clear-query-btn">Cancel</button>
+          <button type="submit" id="ai-summary-subscribe-submit" class="run-query-btn" disabled>Subscribe</button>
+        </div>
+      </form>
+    </div>
+  </div>
+    <script src="js/navbar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <script src="js/newQuery.js"></script>
+</body>
+</html> 

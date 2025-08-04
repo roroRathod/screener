@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Workforce360</title>
+    <link rel="stylesheet" href="css/screens.css">
+    <!-- Logo removed -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="container">
+        <main class="main-content">
+            <section class="main-header-row">
+                <h1 class="header-title">Analytics screens</h1>
+                <button class="create-btn floating-btn" id="open-demographic-pane">CREATE NEW SCREEN</button>
+                <div class="coming-soon-notification" style="background:#ffeeba; color:#856404; padding:1em; border-radius:8px; margin-top:1em; font-weight:600;">Some features are coming soon!</div>
+            </section>
+            <section class="card-section">
+                <div class="card">
+                    <div class="card-title">Attrition themes</div>
+                    <div class="card-grid">
+                        <div class="card-item" onclick="window.location.href='newQuery.html?screen=high-risk-attrition&query=AttritionRisk%20%3D%20%27High%27%20AND%20SalaryPerAnnum%20%3E%201000000%20AND%20ActiveStatus%20%3D%20%27Active%27'" style="cursor:pointer;">
+                            <span class="card-item-title">High Risk Employees &rarr;</span>
+                            <span class="card-item-desc">Employees flagged as high attrition risk.</span>
+                        </div>
+                        <div class="card-item" onclick="window.location.href='newQuery.html?screen=recent-leavers&query=ActiveStatus%20%3D%20%27Inactive%27%20AND%20SalaryPerAnnum%20%3C%201000000%20AND%20AttritionRisk%20%3D%20%27Low%27%20AND%20(PerformanceScore%20%3D%20%27Good%27%20OR%20PerformanceScore%20%3D%20%27Average%27%20OR%20PerformanceScore%20%3D%20%27Excellent%27)'" style="cursor:pointer;">
+                            <span class="card-item-title">Recent Leavers &rarr;</span>
+                            <span class="card-item-desc">Employees who left in the last quarter.</span>
+                        </div>
+                        <div class="card-item" onclick="window.location.href='newQuery.html?screen=retention-opportunities&query=AttritionRisk%20%3D%20%27Low%27%20AND%20PerformanceScore%20%3D%20%27Excellent%27%20AND%20PromotionEligible%20%3D%20%27Yes%27%20AND%20SalaryPerAnnum%20%3C%201000000%20AND%20ActiveStatus%20%3D%20%27Active%27'" style="cursor:pointer;">
+                            <span class="card-item-title">Retention Opportunities &rarr;</span>
+                            <span class="card-item-desc">Employees with high retention potential.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Diversity & Inclusion</div>
+                    <div class="card-grid">
+                        <div class="card-item">
+                            <span class="card-item-title">In Development</span>
+                            <span class="card-item-desc">This part is still being developed.</span>
+                        </div>
+                        <div class="card-item">
+                            <span class="card-item-title">In Development</span>
+                            <span class="card-item-desc">This part is still being developed.</span>
+                        </div>
+                        <div class="card-item">
+                            <span class="card-item-title">In Development</span>
+                            <span class="card-item-desc">This part is still being developed.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Compensation & Benefits</div>
+                    <div class="card-grid">
+                        <div class="card-item">
+                            <span class="card-item-title">In Development</span>
+                            <span class="card-item-desc">This part is still being developed.</span>
+                        </div>
+                        <div class="card-item">
+                            <span class="card-item-title">In Development</span>
+                            <span class="card-item-desc">This part is still being developed.</span>
+                        </div>
+                        <div class="card-item">
+                            <span class="card-item-title">In Development</span>
+                            <span class="card-item-desc">This part is still being developed.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">HR Trends & Metrics</div>
+                    <div class="card-grid">
+                        <div class="card-item">
+                            <span class="card-item-title">In Development</span>
+                            <span class="card-item-desc">This part is still being developed.</span>
+                        </div>
+                        <div class="card-item">
+                            <span class="card-item-title">In Development</span>
+                            <span class="card-item-desc">This part is still being developed.</span>
+                        </div>
+                        <div class="card-item">
+                            <span class="card-item-title">In Development</span>
+                            <span class="card-item-desc">This part is still being developed.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Demographic Side Pane -->
+    <aside id="demographic-pane" class="demographic-pane">
+        <div class="demographic-pane-header">
+            <span class="demographic-pane-title">Demographic Variables</span>
+            <button class="demographic-pane-close" id="close-demographic-pane">&times;</button>
+        </div>
+        <div class="demographic-pane-content" id="demographic-pane-content">
+            <!-- Content will be populated by JS -->
+        </div>
+        <button class="create-btn demographic-create-btn">Create</button>
+    </aside>
+
+    <script src="js/navbar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <script src="js/screens.js"></script>
+</body>
+</html>

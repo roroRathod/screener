@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe to Query Notification - Workforce360</title>
+    <!-- Logo removed -->
+    <style>
+        body {
+            font-family: 'Google Sans', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        .form-title {
+            color: #1976d2;
+            font-size: 24px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .form-field {
+            margin-bottom: 25px;
+        }
+        .form-field label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+        .form-field input[type="email"],
+        .form-field select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .form-field input[type="radio"] {
+            margin-right: 8px;
+        }
+        .form-field .radio-group {
+            display: flex;
+            gap: 20px;
+        }
+        .submit-btn {
+            background-color: #1976d2;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .submit-btn:hover {
+            background-color: #1565c0;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1 class="form-title">Subscribe to Query Notification</h1>
+        
+        <form action="YOUR_GOOGLE_FORM_SUBMISSION_URL" method="POST">
+            <div class="form-field">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="entry.123456789" required>
+            </div>
+            
+            <div class="form-field">
+                <label for="frequency">Notification Frequency *</label>
+                <select id="frequency" name="entry.987654321" required>
+                    <option value="">Select frequency...</option>
+                    <option value="daily">Daily</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="quarterly">Quarterly</option>
+                    <option value="yearly">Yearly</option>
+                </select>
+            </div>
+            
+            <div class="form-field">
+                <label>What do you want to receive? *</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="entry.111222333" value="ai" required>
+                        AI analysis newsletter
+                    </label>
+                    <label>
+                        <input type="radio" name="entry.111222333" value="dataset" required>
+                        Dataset
+                    </label>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">Subscribe</button>
+        </form>
+    </div>
+</body>
+</html> 

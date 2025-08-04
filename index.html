@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workforce360 - Analytics Platform</title>
+    <!-- Logo removed -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Google Sans', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #0070b8 100%);
+            /* min-height: 100vh; */
+            overflow: hidden;
+            /* Remove vertical centering */
+            /* display: flex; */
+            /* align-items: center; */
+            /* justify-content: center; */
+        }
+        .loading-container {
+            text-align: center;
+            color: white;
+            max-width: 400px;
+            padding: 1.2rem 1rem 1.2rem 1rem;
+            margin: 0 auto;
+        }
+        .logo {
+            width: 90px;
+            height: 90px;
+            margin-bottom: 1rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+            background: white;
+            object-fit: contain;
+        }
+        .title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.02em;
+            color: #0070b8;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top: 3px solid #00b5e2;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .redirect-text {
+            font-size: 0.95rem;
+            opacity: 0.85;
+        }
+        .manual-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: #00b5e2;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        .manual-link:hover {
+            background: #0070b8;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <!-- Logo removed -->
+        <h1 class="title">WORKFORCE360</h1>
+        <p class="subtitle">Analytics & Workforce Intelligence Platform</p>
+        <div class="spinner"></div>
+        <p class="redirect-text">Redirecting to analytics screens...</p>
+        <a href="screens.html" class="manual-link">Click here if not redirected automatically</a>
+    </div>
+    <script>
+        setTimeout(function() {
+            window.location.href = 'screens.html';
+        }, 2000);
+        document.addEventListener('click', function() {
+            window.location.href = 'screens.html';
+        });
+    </script>
+</body>
+</html> 
