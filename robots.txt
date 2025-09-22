@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://screenerfordim.netlify.app/screens.html
