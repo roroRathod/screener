@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://screenerfordim.netlify.app/screens.html
+Sitemap: https://screenerfordim.netlify.app/sitemap.xlm
